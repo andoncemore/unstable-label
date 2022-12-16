@@ -1,0 +1,99 @@
+#yourCategories {
+  position: absolute;
+  width: 250px;
+  height: 320px;
+  top:30%;
+  left:45%;
+  z-index: 300;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 4px 4px 0px rgba(226, 226, 226, 0.5);
+  border: 1px solid var(--background-light);
+  display: flex;
+  flex-direction: column;
+}
+
+#yourCategories .handle {
+  height: 18px;
+  background: var(--background-light);
+  border-radius: 4px 4px 0 0;
+  cursor: grab;
+  flex-shrink: 0;
+}
+
+#yourCategories .handle:active {
+  cursor: grabbing;
+}
+
+#yourCategories .titleBlock {
+  border-bottom: 1px solid var(--background-light);
+  padding: 10px 20px 10px 10px;
+}
+
+#yourCategories .titleBlock h2 {
+  display: inline-block;
+  margin-right: 4px;
+}
+
+#yourCategories .titleBlock p {
+  font-size: 11px;
+  line-height: 12px;
+  font-style: italic;
+  color: var(--text-light);
+  margin-top: 3px;
+}
+
+#yourCategories .scrollBlock {
+  flex: 1 1 auto;
+  overflow: auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.scrollBlock::-webkit-scrollbar {
+  width: 9px;
+}
+
+#yourCategories .scrollBlock .categoryBlock {
+  padding: 10px;
+}
+
+#yourCategories .scrollBlock .categoryBlock .dragCategory {
+  display: inline-block;
+  background: var(--text-dark);
+  color: white;
+  padding: 3px 8px;
+}
+
+#yourCategories .scrollBlock .categoryBlock > h4 {
+  color: var(--text-light);
+  text-decoration: line-through;
+  margin-left: 3px;
+  margin-top: 4px;
+}
+
+#yourCategories .scrollBlock .categoryBlock > p {
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 15px;
+  margin-left: 3px;
+  color: #636363;
+}
+
+#yourCategories.active {
+  border: 3px solid var(--green-teal);
+}
+
+#yourCategories.active .scrollBlock .categoryBlock .dragCategory {
+  color: var(--text-dark);
+  background: var(--green-teal);
+  box-shadow: 2px 2px 0px rgba(82, 255, 193, 0.31);
+  cursor: pointer;
+  user-select: none;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+#yourCategories.active .scrollBlock .categoryBlock .dragCategory:hover {
+  box-shadow: 4px 4px 0px rgba(82, 255, 193, 0.4);
+}

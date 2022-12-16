@@ -1,0 +1,58 @@
+.helptip{
+  display:inline-block;
+  position:relative;
+  vertical-align:top;
+  line-height:12px;
+}
+
+.helptip > .helptext{
+    visibility:hidden;
+    opacity: 0;
+    position:absolute;
+    width:150px;
+    top:100%;
+    left:50%;
+    margin-left: -75px;
+    margin-top: 5px;
+    transition: visibility 0s linear 300ms, opacity 300ms;
+
+    font-size:11px;
+    line-height:14px;
+    color: white;
+    background: var(--blue);
+    border-radius:2px;
+    padding:10px;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+    letter-spacing:0.2px;
+    z-index:1000;
+}
+
+.helptip > .helptext > b{
+    font-size: 12px;
+}
+
+.helptip .icon{
+    background:#F3F3F3;
+    color: var(--text-medium);
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    display:inline-block;
+    border:1px solid var(--text-medium);
+    text-align:center;
+    font-size: 10px;
+    line-height:13px;
+    font-weight:bold;
+    user-select:none;
+    transition: transform 100ms ease
+}
+
+.helptip .icon:hover ~ .helptext{
+    opacity: 1;
+    visibility:visible;
+    transition: visibility 0s linear 0s, opacity 300ms;
+}
+
+.helptip .icon:hover{
+    transform: scale(1.2);
+}

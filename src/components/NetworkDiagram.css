@@ -1,0 +1,44 @@
+#networkDiagram{
+  position:absolute;
+  top:0;
+  bottom:0;
+  
+  width:100%;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+  overflow-x:auto;
+}
+
+
+#networkDiagram > .scrollContainer{
+  width:200%;
+  height:100%;
+  position:relative;
+}
+
+/* #networkDiagram svg{
+  pointer-events: fill;
+} */
+
+#networkDiagram .nodes{
+  pointer-events:fill;
+/*   opacity:0.8; */
+}
+
+#networkDiagram .links{
+  opacity:0.5;
+}
+
+#networkDiagram .tooltip{
+  position:absolute;
+  opacity:0;
+  background:white;
+  border-radius:3px;
+  padding:4px;
+  font-size:11px;
+  font-weight:bold;
+  box-shadow: 4px 4px 0px rgba(0, 0, 226, 0.2);
+}
+
+

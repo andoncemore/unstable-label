@@ -1,0 +1,105 @@
+#createCategories {
+  background: var(--red);
+  box-shadow: 6px 6px 0px rgba(255, 83, 83, 0.4);
+}
+
+#createCategories > nav{
+  background: var(--red);
+  color:white;
+}
+
+#createCategories svg{
+  position:absolute;
+  width:100%;
+  height:100%;
+  z-index:1;
+}
+
+#createCategories .labelOutline {
+  stroke: white;
+  stroke-width:4;
+  fill:none;
+  vector-effect: non-scaling-stroke;
+  stroke-linejoin: round;
+}
+
+#createCategories .selectedShape{
+  stroke: var(--blue);
+  stroke-width:6;
+  fill:none;
+  vector-effect: non-scaling-stroke;
+  stoke-linejoin:round;
+}
+
+
+
+
+#createCategories .textLabel{
+  position:absolute;
+  z-index:20;
+  color:red;
+  background: rgba(255,255,255,0.8);
+  font-size: 18px;
+  border-radius:2px;
+  padding: 0 4px;
+  transition: transform 150ms, background 100ms, color 100ms;
+  cursor:pointer;
+  
+  overflow:hidden;
+  display:inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.textLabel.invisible{
+  opacity: 0.5;
+}
+
+#createCategories .textLabel:hover,
+#createCategories .textLabel.active{
+  transform: scale(1.1);
+  background:var(--blue);
+  color:white;
+  z-index:21;
+}
+
+#createCategories .textLabelContainer{
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  z-index:20;
+}
+
+#createCategories .pending{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background:rgba(255,0,0,0.6);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    z-index:2;
+}
+
+#createCategories .pending .loader{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 8px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.9s infinite;
+    -webkit-animation: spin 0.9s infinite;
+    margin: 30px;
+}
+
+@keyframes spin{
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg);}
+}

@@ -1,0 +1,132 @@
+#viewPanel > nav {
+  box-sizing: border-box;
+  height: 55px;
+  width: 100%;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+#viewPanel > nav h3 {
+  margin-left:14px;
+  color: var(--text-light);
+}
+
+#viewPanel .dropdown {
+  margin-left: 4px;
+  border: 2px solid white;
+  border-radius:3px;
+  padding: 2px 4px;
+  transition: border 150ms;
+  cursor:pointer;
+}
+
+#viewPanel .dropdown:hover{
+  border: 2px solid var(--text-dark);
+}
+
+#viewPanel .dropdown h2{
+  display:inline-block;
+  
+}
+
+#viewPanel .dropdown.list::after {
+  font-family: "FontAwesome";
+  font-weight: 400;
+  content: "\f107";
+  margin-left: 5px;
+  font-size: 0.75em;
+}
+
+#viewPanel .dropdown.choice::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f057";
+  margin-left: 5px;
+  font-size: 0.75em;
+}
+
+#viewPanel .dropdown.list.active{
+  border: 2px solid var(--blue);
+}
+
+#viewPanel .dropdown.list .results{
+  position:absolute;
+  width: 90%;
+  left:5%;
+  top: 43px;
+  max-height:300px;
+  background:white;
+  border: 2px solid var(--blue);
+  border-radius:2px;
+  box-shadow: 4px 4px 0px rgba(226, 226, 226, 0.5);
+  z-index:500;
+  
+  display:flex;
+  flex-direction:column;
+}
+
+
+#viewPanel .dropdown.list .results .header {
+  width:100%;
+  height:24px;
+  border-bottom: 2px solid var(--blue);
+  flex-shrink: 0;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  padding-left: 10px;
+  font-style:italic;
+/*   color: var(--blue); */
+  font-weight:normal;
+}
+
+#viewPanel .dropdown.list .results .listing{
+  flex-grow:1;
+  width:100%;
+  min-height:0;
+  
+  display:flex;
+  flex-direction:column;
+  box-sizing:border-box;
+  overflow:auto;
+}
+
+#viewPanel .dropdown.list .results .listing > div{
+  flex-shrink:0;
+  width:100%;
+  padding:8px 10px;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+}
+
+#viewPanel .dropdown.list .results .listing > div:hover{
+  background:var(--background-light);
+}
+
+#viewPanel .dropdown.list .results .listing > div.active{
+  background:var(--blue);
+  color:white;
+}
+
+#viewPanel .dropdown.list .results .listing > div > span{
+  display:block;
+  width:16px;
+  height:16px;
+  line-height:16px;
+  font-size:9px;
+  font-weight:bold;
+  text-align:center;
+  border-radius:8px;
+  background: var(--text-light);
+  margin-left: 5px;
+}
+
+#viewPanel .dropdown.list .results .listing > div.active > span{
+  background:white;
+  color:var(--blue);  
+}

@@ -1,0 +1,341 @@
+/* const panoStyle = {
+  background: 'var(--background-light)',
+  width: "100%",
+  flexGrow: "1"
+} */
+
+.onboarding {
+  width: 100%;
+  flex-grow: 1;
+
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  
+  
+  overflow:hidden;
+}
+
+.onboarding .slide {
+  width: 100%;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  min-height: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing:border-box;
+}
+
+.onboarding .slide.home{
+  align-items: start;
+  background:white;
+  scroll-snap-align: start;
+}
+
+.onboarding .slide.home > h1,
+.onboarding .slide.home > h4,
+.onboarding .slide.home > .start,
+.onboarding .slide.home > .walkthrough,
+.onboarding .slide.home > h5 {
+  max-width: 500px;
+  min-width: 500px;
+  margin: 0 auto;
+}
+
+.onboarding .slide.home > .walkthrough{
+  margin-top: 15px;
+  font-weight:bold;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.onboarding .slide.home > .walkthrough > a:hover{
+  text-decoration:underline;
+}
+
+.onboarding .map {
+  width: 100%;
+  flex-shrink: 0;
+  min-height:0;
+  scroll-snap-align: start;
+}
+
+.onboarding .map input{
+  position:absolute;
+  top: 20px;
+  left:50%;
+  width:300px;
+  padding: 6px;
+  font-size: 14px;
+  font-family:Arial;
+  transform: translateX(-50%);
+  border:1px solid white;
+  border-radius:2px;
+  font-weight:bold;
+  color: var(--text-dark);
+}
+
+.onboarding .map input:hover{
+   border: 1px solid var(--blue);
+}
+
+.onboarding .map input:focus{
+  outline:2px solid rgba(70,70,255,0.4);
+}
+
+.onboarding .map input::placeholder{
+  color: var(--text-light);
+  font-style:italic;
+}
+
+.onboarding .sessionStart{
+  position:absolute;
+  bottom: 20px;
+  width:375px;
+  left: 20%;
+  z-index:200;
+  padding:12px;
+  background: white;
+  display:flex;
+  flex-flow: row wrap;
+  box-shadow: 4px 4px 0px rgba(0, 0, 226, 0.2);
+  border: 2px solid var(--blue);
+  border-radius:2px;
+}
+
+.onboarding .sessionStart .instructions{
+  width:100%;
+  margin-bottom:8px;
+}
+
+.onboarding .sessionStart input{
+  flex-grow:1;
+  margin-right:8px;
+  padding: 6px;
+  font-size: 14px;
+  font-family:Arial;
+  border:1px solid var(--text-light);
+  border-radius: 2px;
+  font-weight:bold;
+}
+
+.onboarding .sessionStart input:hover{
+   border: 1px solid var(--blue);
+}
+
+.onboarding .sessionStart input:focus{
+  outline:2px solid rgba(70,70,255,0.4);
+}
+
+.onboarding .sessionStart input::placeholder{
+  color: var(--text-light);
+  font-style:italic;
+}
+
+
+.onboarding .slide h1 {
+  font-size: 96px;
+  line-height: 0.9;
+  margin-bottom: 10px !important;
+}
+
+.onboarding .slide h3 {
+  font-size: 20px;
+}
+
+.onboarding .slide.home > h4 {
+  font-size: 18px;
+}
+
+.onboarding .slide.home > h5{
+  font-size: 12px;
+  margin-top: 10px !important;
+  font-style: italic;
+}
+
+/* Start Boxes  */
+
+.start {
+  display: flex;
+  margin-top: 60px !important;
+}
+
+.sourceDropdown {
+  display: inline-block;
+  padding: 8px;
+  border-radius: 3px;
+  margin-right: 6px;
+  position: relative;
+  box-sizing: border-box;
+  border: 2px solid var(--text-dark);
+  transition: border 200ms;
+  cursor: pointer;
+  min-width: 200px;
+  position:relative;
+}
+
+.sourceDropdown:hover {
+  border: 2px solid var(--blue);
+}
+
+.sourceDropdown.active {
+  border: 2px solid var(--blue);
+}
+
+.sourceDropdown::after {
+  font-family: "FontAwesome";
+  font-weight: 400;
+  content: "\f107";
+  margin-right: 5px;
+  font-size: 0.75em;
+}
+
+.sourceDropdown h4 {
+  display: inline-block;
+  font-size: 13px;
+  margin-right: 6px;
+}
+
+.sourceDropdown > .results {
+  position: absolute;
+  bottom: 120%;
+  left: 0;
+  width: 320px;
+  background: white;
+  border: 2px solid var(--blue);
+  display: flex;
+  flex-flow: column nowrap;
+  border-radius: 2px;
+  box-shadow: 4px 4px 0px rgba(226, 226, 226, 0.5);
+  max-height: 225px;
+  overflow: auto;
+}
+
+
+.sourceDropdown > .results > div{
+  height:75px;
+  width: 100%;
+  display:flex;
+  align-items: center;
+  font-size: 12px;
+  transition: background 100ms;
+  color: var(--blue);
+}
+
+.sourceDropdown > .results > div:hover{
+  background: var(--background-light);
+}
+
+.sourceDropdown > .results > div > .image{
+  width: 130px;
+  height:100%;
+  box-sizing: border-box;
+  padding:10px;
+  margin-right:10px;
+  flex-shrink:0;
+  overflow:hidden;
+  display:flex;
+}
+
+.sourceDropdown > .results > div > .image img{ 
+  max-width:100%;
+  border-radius:2px;
+}
+
+
+.sourceDropdown > .results > div.disabled {
+  color: var(--text-light);
+  font-style: italic;
+  pointer-events:none;
+} 
+
+.sourceDropdown > .results > div.disabled > .image img{
+  filter:grayscale(100%);
+}
+
+.sourceDropdown > .results > div.selected {
+  background: var(--blue);
+  color:white;
+} 
+
+
+/* Walkthrough  */
+
+.onboarding::-webkit-scrollbar {
+  display: none;
+}
+
+.onboarding .walk {
+  width: 100%;
+  flex-shrink: 0;
+  min-height: 0;
+  margin-top:55px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 32px;
+  box-sizing:border-box;
+  scroll-snap-align: start;
+}
+
+.onboarding .walk h2{
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.onboarding .walk p{
+  font-size: 14px;
+  margin-bottom: 12px;
+  line-height: 1.25;
+  max-width: 65ch;
+  color: var(--text-medium);
+}
+
+.onboarding .walk a{
+  color: var(--blue);
+  text-decoration:none;
+}
+
+.onboarding .walk a:visited{
+  color: var(--blue);
+}
+
+
+.onboarding .walkthroughImages{
+  flex-grow:1;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.onboarding .walkthroughImages.two > img{
+  width:49%;
+}
+
+.onboarding .walkthroughImages > img{
+  width:100%;
+}
+
+.contributing{
+  position:absolute;
+  top:0;
+  right:0;
+  height:55px;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  margin-right:32px;
+}
+
+.contributing a{
+  color: var(--blue);
+  font-size:14px;
+  font-weight:bold;
+}

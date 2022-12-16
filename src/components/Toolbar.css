@@ -1,0 +1,90 @@
+.toolbar {
+  background: white;
+  box-shadow: 4px 4px 0px rgba(226, 226, 226, 0.5);
+  border: 3px solid var(--green-teal);
+  position: absolute;
+  z-index: 300;
+  top:10%;
+  left:25%;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  width: 175px;
+  border-radius: 4px;
+  cursor: grab;
+}
+
+.toolbar:active{
+  cursor:grabbing;
+}
+
+.toolbar > .handle {
+  height: 18px;
+  background: var(--background-light);
+  border-radius: 4px 4px 0 0;
+  cursor: grab;
+  flex-shrink: 0;
+}
+
+.toolbar .handle:active {
+  cursor: grabbing;
+}
+
+/* Title Block  */
+
+.toolbar .titleBlock {
+  margin-top: 6px;
+  padding-left: 8px;
+}
+
+.toolbar .titleBlock h4{
+  margin-right: 4px;
+}
+
+.toolbar h4 {
+  display: inline-block;
+}
+
+/* Brush Block  */
+
+.toolbar .brushes {
+  padding: 5px;
+  padding-bottom: 10px;
+  display: flex;
+}
+
+.toolbar .brushes input {
+  display: none;
+}
+
+.toolbar .brushes label {
+  padding: 4px 8px 4px 6px;
+  display: block;
+  border-radius: 4px;
+  user-select: none;
+  color: var(--text-light);
+  background: white;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background 50ms ease, box-shadow 50ms ease, color 50ms ease;
+}
+
+.toolbar .brushes label:first-of-type {
+  margin-right: 5px;
+}
+
+.toolbar .brushes label > span {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 18px;
+  vertical-align: middle;
+  margin-right:2px;
+}
+
+.toolbar .brushes input:checked + label {
+  background: var(--blue);
+  color: white;
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.25);
+}
